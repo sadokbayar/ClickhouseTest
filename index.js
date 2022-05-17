@@ -15,7 +15,7 @@ async function setupPlugin({ config }) {
 
        const { ClickHouse } = require('clickhouse');
 console.log('test2---------');
-const ch = new ClickHouse({ 'click.54.37.31.13.nip.io', 30851, 'clickhouse_operator', 'clickhouse_operator_password' });
+const ch = new ClickHouse({ 'click.54.37.31.13.nip.io', '30851', 'clickhouse_operator', 'clickhouse_operator_password' });
 console.log('test3---------');
 const stream = ch.query("SELECT 1", (err, data) => {});
 stream.pipe(process.stdout);
