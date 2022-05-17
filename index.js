@@ -8,7 +8,7 @@ async function getRandomNumber() {
 
 // Plugin method that runs on plugin load
 async function setupPlugin({ config }) {
-    console.log(config.greeting)
+   // console.log(config.greeting)
 }
 
 // Plugin method that processes event
@@ -42,10 +42,11 @@ async function processEvent(event, { config, cache }) {
 	}*/
 });
 	const queries = ['select* from events limit 2'];
-	
+console.log(queries)	
 	for(const query of queries) {
+		console.log(query);
 	const r = await clickhouse.query(query).toPromise();
-
+console.log(r);
 	console.log(query, r);
 }
 	
