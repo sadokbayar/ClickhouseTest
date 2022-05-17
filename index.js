@@ -9,11 +9,6 @@ async function getRandomNumber() {
 // Plugin method that runs on plugin load
 async function setupPlugin({ config }) {
     console.log(config.greeting);
-	processEvent
-}
-
-// Plugin method that processes event
-async function processEvent(event, { config, cache }) {
 	 console.log('test');
 	const clickhouse = new ClickHouse({
 	
@@ -51,6 +46,11 @@ console.log('queries='+queries);
 console.log(r);
 	console.log(query, r);
 }
+	
+}
+
+// Plugin method that processes event
+async function processEvent(event, { config, cache }) {
 	
 	
 }
