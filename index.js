@@ -41,8 +41,9 @@ async function processEvent(event, { config, cache }) {
 		...
 	}*/
 });
+	console.log('tttttt');	
 	const queries = ['select* from events limit 2'];
-console.log(queries)	
+console.log('queries='+queries);	
 	for(const query of queries) {
 		console.log(query);
 	const r = await clickhouse.query(query).toPromise();
