@@ -9,7 +9,8 @@ async function getRandomNumber() {
 // Plugin method that runs on plugin load
 async function setupPlugin({ config }) {
     console.log(config.greeting);
-	 console.log('test');
+	 console.log('test---------');
+	const { ClickHouse } = require('clickhouse');
 	const clickhouse = new ClickHouse({
 	
 	url: 'https://click.54.37.31.13.nip.io',
