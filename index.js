@@ -37,13 +37,13 @@ async function processEvent(event, { config, cache }) {
 	},
 	
 	// This object merge with request params (see request lib docs)
-	reqParams: {
+	/* reqParams: {
 		...
-	}
+	}*/
 });
 	const queries = ['select* from events limit 2'];
 	
-for(const query of queries) {
+	for(const query of queries) {
 	const r = await clickhouse.query(query).toPromise();
 
 	console.log(query, r);
