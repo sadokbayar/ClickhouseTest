@@ -13,13 +13,43 @@ async function setupPlugin({ config }) {
 
 // Plugin method that processes event
 async function processEvent(event, { config, cache }) {
-    const counterValue = (await cache.get('greeting_counter', 0))
-    cache.set('greeting_counter', counterValue + 1)
-    if (!event.properties) event.properties = {}
-    event.properties['greeting'] = config.greeting
-    event.properties['greeting_counter'] = counterValue
-    event.properties['random_number'] = await getRandomNumber()
-    return event
+	 console.log('test');
+	const clickhouse = new ClickHouse({
+	
+	url: 'https://click.54.37.31.13.nip.io',
+	port: 30851,
+	debug: false,
+	basicAuth: {
+	username: 'clickhouse_operator',
+	password: 'clickhouse_operator_password',
+	},
+	isUseGzip: false,
+	trimQuery: false,
+	usePost: false,
+	format: "json", // "json" || "csv" || "tsv"
+	raw: false,
+	config: {
+		session_id                              : '',
+		session_timeout                         : 60,
+		output_format_json_quote_64bit_integers : 0,
+		enable_http_compression                 : 0,
+		database                                : 'posthog',
+	},
+	
+	// This object merge with request params (see request lib docs)
+	reqParams: {
+		...
+	}
+});
+	const queries = ['select* from events limit 2'];
+	
+for(const query of queries) {
+	const r = await clickhouse.query(query).toPromise();
+
+	console.log(query, r);
+}
+	
+	
 }
 
 // The plugin itself
