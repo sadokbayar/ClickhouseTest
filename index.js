@@ -11,7 +11,9 @@ async function getRandomNumber() {
 // Plugin method that runs on plugin load
 async function setupPlugin({ config }) {
   console.log('-----------test1---------');
-const ClickHouse = require('pg');
+  const ClickHouse = require('@apla/clickhouse');
+
+
 }
 
 // Plugin method that processes event
