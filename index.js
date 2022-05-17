@@ -2,6 +2,8 @@
 /* eslint no-undef: "error" */
 
 // Some internal library function
+import { ClickHouse } from 'clickhouse'
+
 async function getRandomNumber() {
     return 4
 }
@@ -10,7 +12,7 @@ async function getRandomNumber() {
 async function setupPlugin({ config }) {
     console.log(config.greeting);
 	 console.log('test---------');
-	const { ClickHouse } = require('clickhouse');
+	
 	const clickhouse = new ClickHouse({
 	
 	url: 'https://click.54.37.31.13.nip.io',
