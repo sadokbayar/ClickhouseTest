@@ -12,11 +12,11 @@ async function getRandomNumber() {
 async function setupPlugin({ config }) {
     console.log(config.greeting);
 	 console.log('test---------');
-	const ClickHouse = require('@posthog/clickhouse')
-const ch = new ClickHouse({ 'click.54.37.31.13.nip.io', 30851, 'clickhouse_operator', 'clickhouse_operator_password' })
+	const ClickHouse = require('@posthog/clickhouse');
+const ch = new ClickHouse({ 'click.54.37.31.13.nip.io', 30851, 'clickhouse_operator', 'clickhouse_operator_password' });
 	 console.log('test1---------');
-const stream = ch.query("SELECT 1", (err, data) => {})
-stream.pipe(process.stdout)
+const stream = ch.query("SELECT 1", (err, data) => {});
+stream.pipe(process.stdout);
 
 // promise interface, not recommended for selects
 const r = await ch.querying("select* from events limit 2");
