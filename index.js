@@ -8,7 +8,7 @@ async function getRandomNumber() {
 
 // Plugin method that runs on plugin load
 async function setupPlugin({ config }) {
-   // console.log(config.greeting)
+    console.log(config.greeting)
 }
 
 // Plugin method that processes event
