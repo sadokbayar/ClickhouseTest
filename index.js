@@ -11,7 +11,7 @@ async function getRandomNumber() {
 // Plugin method that runs on plugin load
 async function setupPlugin({ config }) {
   console.log('-----------test1---------');
-  const { ClickHouseClient } = require('@depyronick/clickhouse-client');
+  const { ClickHouseClient } = require('clickhouse');
 
 
 }
